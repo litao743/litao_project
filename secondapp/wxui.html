@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="weui-grids">
+			
+		</div>
+	</body>
+	<script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+	<script type="text/javascript">
+		$.ajax({
+			type:'get',
+			url:'name.json',
+			dataType:'json',
+			async:true,//异步
+			success:function(datas){
+				console.log(datas);
+				putdata(datas);
+			},
+		});
+		function putdata(datas){
+			$.each(datas,function (index,item) {
+				console.log(item["name"]+"--"+item["imag"]);
+				var aobj=$("<a></a>");
+				aobj.addClass("weui-grid js_grid");
+				
+				var divobj=$("<div></div>");
+				divobj.addClass("weui-grid__icon");
+				
+				var imgobj=$("<img></img>");
+				imgobj.attr({src:item["imag"]});
+				
+				var pobj=$("<p></p>");
+				pobj.addClass("weui-grid__label")
+				pobj.text(item["name"]);
+				
+				aobj.append(divobj);
+				aobj.append(pobj);
+				divobj.append(imgobj);
+				$(".weui-grids").append(aobj);
+			});
+		}
+	</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <div  id="app">
+
+   <input  type="text"  v-model="msg">
+
+       <span>{{msg}}</span>
+
+   </div>
+</body>
+<script  src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+<script  type="text/javascript">
+      let  app   =new  Vue({
+          el:"#app",
+          data:{
+              msg:"南京市智芯大厦7楼基地"
+
+          }
+
+
+      });
+
+</script>
+</html>

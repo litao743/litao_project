@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="baseview">
+			<div>
+			  <input placeholder="用户名" ref="uname"  type="text"/>
+			</div>
+			<div>
+			  <input placeholder="密码" ref="upwd"  type="password"/>
+			</div>
+			<div>
+			  <button v-on:click="checklogin" >登录</button>
+			</div>
+			<span>{{msg}}</span>
+		</div>
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript">
+			var vm=new Vue({
+				el:"#baseview",
+				data:{
+					msg:"",
+				},
+				methods:{
+					checklogin:function(){
+						console.log("用户登录");
+						var uname=this.$refs.uname.value;
+						var upwd=this.$refs.upwd.value;
+						console.log(uname+","+upwd);
+						var that=this;
+						$.ajax({
+							type:"post",
+							url:"http://127.0.0.1:8555/user/login",
+							data:{"uname":uname,"upwd":upwd},
+							dataType:"json",
+							success:function(data){
+								console.log(data);
+								console.log(typeof(data));
+								if(data.flag=="true"){
+									localStorage.setItem("jwttoken",data.token);
+									window.location.href="usermain.html";
+								}
+								else{
+									that.msg="登录失败";
+								}
+							}
+						})
+					}
+				}
+			})
+	</script>
+</html>

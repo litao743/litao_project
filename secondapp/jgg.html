@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+			}
+				.baseview{
+					width: 100%;
+					height: 100vh;
+					background-color: aqua;
+					}
+					.topview{
+						width: 100%;
+						height: 8%;
+						font-family: kaiti;
+						font-weight: bold;
+						font-size: 40px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						color: beige;
+						border-bottom: 2px solid white;
+					}
+					.centorview{
+						width: 100%;
+						height: 84%;
+						border-bottom: 2px solid white;
+						display: flex;
+						flex-wrap: wrap;
+						align-items: center;
+						justify-content: center;
+					}
+					.lastview{
+						width: 100%;
+						height: 8%;
+						color: #F5F5DC;
+						font-family: kaiti;
+						font-weight: bold;
+						font-size: 40px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+					.cell{
+						width: 30%;
+						height: 40%;
+						font-size: 50px;
+						border: 4px solid white ;
+						display: flex;
+						align-items: center;
+						justify-content: space-around;
+						
+					}
+		</style>
+	</head>
+	<body>
+		<div class="baseview">
+			<div class="topview">ttmusic</div>
+			<div class="centorview"></div>
+			<div class="lastview">tt科技</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$.ajax({
+			type:"get",
+			url:"http://litao.free.idcfengye.com/shur",
+			dataType:"json",
+			async:true,//同步和异步
+			success:function(datas) {
+				console.log(datas);
+				createGridView(datas)
+			}
+		});
+		function createGridView(datas){
+			$.each(datas,function(index,value){
+				console.log(index+","+value["jname"]+","+value["jaddr"]);
+				var divj=$("<div><div>");
+				divj.addClass("cell");
+				divj.text(value["jname"]);
+				$(".centorview").append(divj);
+				console.log(divj);
+			})
+		}
+	</script>
+</html>

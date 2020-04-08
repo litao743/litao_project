@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	<style type="text/css">
+		html,body{
+			position: relative;
+						margin: 0;
+						padding: 0;
+					}
+			.baseview{
+				width: 100%;
+				height: 100vh;
+				/* background-color: aqua; */
+			}
+			.tableclass{
+				border: 1px solid black;
+			}
+	</style>
+	</head>
+	<body>
+		<div >你好</div>
+		<div id="data"></div>
+	</body>
+	<script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$.ajax({
+			dataType:'json',
+			url:"http://localhost:8555/user/quarydatas",
+			// async:false true :表示异步的,
+			type:"get",
+			success:function(res){
+				console.log(res);
+				var resdata=res;
+				var dataobj=$("<table></table>");
+				
+				
+				$.each(resdata,function(index,value){
+					var trobject=$("<tr></tr>");
+					var tdobj1=$("<td><td>");
+					tdobj1.text(resdata[index]["did"]);
+					console.log(resdata[index]["did"]);
+					var tdobj2=$("<td><td>");
+					tdobj2.text(resdata[index]["dname"]);
+					var tdobj3=$("<td><td>");
+					tdobj3.text(resdata[index]["dadderss"]);
+					trobject.append(tdobj1);
+					trobject.append(tdobj2);
+					trobject.append(tdobj3);
+					dataobj.append(trobject);
+				}),
+				dataobj.addClass("tableclass");
+				$("#data").append(dataobj);
+				
+			}
+		})
+	</script>
+</html>

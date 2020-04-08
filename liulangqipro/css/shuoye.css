@@ -1,0 +1,163 @@
+html,body{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+			}
+			
+			.baseview{
+				
+				width: 100%;
+				height: 100%;
+			}
+			.topview{
+				width: 100%;
+				height: 7%;
+				/* border-bottom: 1px solid yellow; */
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.centview{
+				width: 100%;
+				height: 88%;
+				/* border-bottom: 1px solid red; */
+				display: flex;
+			}
+			.lastview{
+				width: 100%;
+				height: 4%;
+				/* border-bottom: 1px solid red; */
+				
+			}
+			.toponew{
+				width: 15%;
+				height: 80%;
+				border: saddlebrown solid 1px;
+			}
+			.toptwo{
+				width: 30%;
+				height: 80%;
+				border: saddlebrown solid 1px;
+			}
+			.topthree{
+				width: 40%;
+				height: 80%;
+				border: saddlebrown solid 1px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+		
+			}
+			.threesell{
+				width: 18%;
+				height: 70%;
+				border: saddlebrown solid 1px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.imgview{
+				width: 30%;
+				height: 90%;
+				/* border: saddlebrown solid 1px; */
+			}
+				
+			.textview{
+				width: 65%;
+				height: 90%;
+				font-size: 12px;
+				font-weight: bold;
+				/* border: saddlebrown solid 1px; */
+				display: flex;
+				justify-content: space-between;
+				align-items: center;}
+			.cent1{
+				width: 33%;
+				height: 100%;
+				background-color: aliceblue;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+			}
+			.cent2{
+				width: 67%;
+				height: 100%;
+				background-color: greenyellow;
+				
+			}
+			.centop{
+				width: 100%;
+				height:30%;
+				border-bottom: black solid 1px;
+				display: flex;
+			}
+			.ctp1{
+				width: 70%;
+				height: 100%;
+				background-color: white;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.lubosview{
+				width: 45%;
+				height: 90%;
+				border: 1px solid black;
+			}
+			.ctp2{
+				width: 30%;
+				height: 100%;
+				/* background-color: white; */
+			}
+			.centlast{
+				width: 100%;
+				height:79%;
+				/* border-bottom: black solid 1px; */
+				background-color: #87CEEB;
+				display: flex;
+			}
+			.imagediv{
+				width: 100%;
+				height: 50px;
+			}
+			/* .cent3{
+				width: 34%;
+				height: 100%;
+				background-color: aquamarine;
+			} */
+			.newview{
+				width: 100%;
+				height: 9%;
+				border-bottom: 1px  solid skyblue;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				align-items: center;
+			}
+				
+			.imaview{
+				width: 15%;
+				height: 90%;
+				/* border-right: 1px solid black; */
+			}
+			.img2view{
+				width: 100%;
+				height: 100%;
+				
+			}
+				
+			.newstit{
+				width: 70%;
+				height: 90%;
+				/* border: 1px solid red; */
+				font-size: 13px;
+				font-weight: bold;
+				font-family: 楷体;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				align-items: center;
+			}

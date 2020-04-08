@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div  id="app">
+    <router-link to="/index">首页</router-link>
+    <router-link  to="/user">用户功能</router-link>
+
+    <div>
+        <!--所有的视图全部显示在router-view-->
+        <router-view/>
+    </div>
+
+
+</div>
+</body>
+<template id="indexview">
+  <div>
+
+      <p>武汉人，湖北人都不容易！</p>
+
+  </div>
+
+
+</template>
+
+<template id="userview">
+
+     <h1>大家有能力的时候，可以去帮一帮这些可怜的孩子!</h1>
+
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.bootcss.com/vue-router/3.1.3/vue-router.js"></script>
+<script  type="text/javascript">
+
+   let  Index={template:"#indexview"};
+
+   let  User={template:"#userview"};
+
+   //2.配置路由
+   //js  定义常量  路由规则   动作-->视图模板
+   const   thzmRoutes=[
+       {path:"/index",component: Index},
+       {path:"/user",component:User}]
+
+
+   //4.创建路由对象
+   const troute= new VueRouter({
+
+       routes:thzmRoutes
+
+   });
+
+
+   //5.创建vue对象
+   let  vue   =new Vue({
+       el:"#app",
+       router:troute
+
+   });
+
+
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		 <div id="baseview">
+			 <button @click="quarydeptinfo">查询部门信息</button>
+			 <button @click="quarymoney">查询公司利润</button>
+		 </div>
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:"#baseview",
+			data:{},
+			methods:{
+				quarydeptinfo:function(){
+					var   token=localStorage.getItem("jwttoken");
+					console.log("获取的口令为:"+token);
+				},
+				quarymoney:function(){
+					 var   token=localStorage.getItem("jwttoken");
+					console.log("获取的口令为:"+token);
+					$.ajax({
+						type:"post",
+						url:"http://127.0.0.1:8555/user/querymoney",
+						headers:{"jwttoken":token},
+						dataType:"json",
+						success:function(data){
+							console.log(data);
+							console.log(typeof(data));
+							
+							},
+					})
+				}
+			}
+		})
+	</script>
+</html>

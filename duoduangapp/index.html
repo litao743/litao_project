@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="css/index.css" />
+	<link rel="stylesheet" href="css/swiper.min.css">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+	<style type="text/css">
+	html,body{
+		position: relative;
+					margin: 0;
+					padding: 0;
+				}
+		.baseview{
+			width: 100%;
+			height: 100vh;
+			/* background-color: aqua; */
+		}
+		.cimg{
+			width: 100%;
+			height: 100%;
+		}
+		.topview{
+			width: 100%;
+			height: 8%;
+			font-family: kaiti;
+			font-weight: bold;
+			font-size: 1.2rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: black ;
+			border-bottom: 2px solid black;
+		}
+		
+		.centorview{
+			width: 100%;
+			height: 79%;
+			border-bottom: 2px solid black;
+		}
+		.cent1view{
+			width: 100%;
+			height: 30%;
+			border: 1px blue solid;
+			
+		}
+		.cent2view{
+			width: 100%;
+			height: 68%;
+			border: brown 1px solid;
+			
+		}
+		.cenview{
+			width: 100%;
+			height: 90%;
+			
+		}
+		.lastview{
+			width: 100%;
+			height: 11%;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="baseview">
+		<div class="topview">
+		</div>
+		<div class="centorview">
+			<div class="cent1view">
+				<div class="cenview">
+				<div class="swiper-container">
+				  <div class="swiper-wrapper">
+					 <div class="swiper-slide">
+					     <img src="http://127.0.0.1:8400/images/mapp7.jpg"  class="cimg" alt="">
+					   </div>
+					   <div class="swiper-slide">
+					   	 <img src="http://127.0.0.1:8400/images/mapp8.jpg" class="cimg" alt="">
+					   </div>
+					   <div class="swiper-slide">
+					       <img src="http://127.0.0.1:8400/images/mapp9.jpg" class="cimg" alt="">
+					    </div>
+				  </div>
+				  </div>
+				</div>
+			</div>
+			<div class="cent2view">
+				
+			</div>
+		</div>
+		<div class="lastview">
+			<!--底部菜单栏 start-->
+					 <div class="weui-tabbar">
+					    <a href="javascript:;" class="weui-tabbar__item weui-bar__item--on">
+					      <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
+					      <div class="weui-tabbar__icon">
+					        <img src="http://jd82gh.natappfree.cc/images/f5.png" alt="">
+					      </div>
+					      <p class="weui-tabbar__label">首页</p>
+					    </a>
+					    <a href="javascript:;" class="weui-tabbar__item">
+					      <div class="weui-tabbar__icon">
+					        <img src="http://jd82gh.natappfree.cc/images/f9.png" alt="">
+					      </div>
+					      <p class="weui-tabbar__label">通讯录</p>
+					    </a>
+					    <a href="javascript:;" class="weui-tabbar__item">
+					      <div class="weui-tabbar__icon">
+					        <img src="http://jd82gh.natappfree.cc/images/h3.png" alt="">
+					      </div>
+					      <p class="weui-tabbar__label">发现</p>
+					    </a>
+					    <a href="my.html" class="weui-tabbar__item">
+					      <div class="weui-tabbar__icon">
+					        <img src="http://jd82gh.natappfree.cc/images/cz.png" alt="">
+					      </div>
+					      <p class="weui-tabbar__label">我</p>
+					    </a>
+					  </div>
+					
+					<!--底部菜单栏  end-->
+		</div>
+	</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/Swiper/3.4.1/js/swiper.jquery.min.js"></script>
+<script type="text/javascript">
+	
+	// function quaryimag(){
+	// 	$.ajax({
+	// 		type:"get",
+	// 		url:"http://127.0.0.1:8400/text/shouytext.json",
+	// 		dataType:"json",
+	// 		async:false,
+	// 		success:function(datas){
+	// 			console.log(datas);
+	// 			console.log(datas[1]["轮播"]);
+	// 			$(".topview").text(datas[0]["title"]);
+	// 			var iamdata=datas[1]["轮播"];
+	// 			$.each(iamdata,function(index,value){
+	// 				var divobj=$("<div></div>");
+	// 				divobj.addClass("swiper-slide");
+	// 				var imaobj=$("<img></img>");
+	// 				imaobj.addClass("img2view");
+	// 				imaobj.attr({"src":"http://127.0.0.1:8400/images/"+value["ima"]});
+	// 				divobj.append(imaobj);
+	// 				$(".swiper-wrapper").append(divobj);
+					
+	// 			})
+	// 		}
+	// 	})
+	// };
+	
+	// quaryimag()
+	var swiper = new Swiper('.swiper-container', {
+				parallax: true,
+				speed: 600, // 速度
+				autoplay: 900, //可选选项，自动滑动
+				delay: 3000,
+	
+			});
+</script>
+</html>

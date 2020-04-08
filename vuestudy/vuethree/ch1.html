@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div  id="app">
+   <gjhc></gjhc>
+</div>
+
+</body>
+<script  src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+<script type="text/javascript">
+
+    /**
+     * vue自定义组件
+     *
+     * 1.组件是不是可以共享
+     * 2.单页面应用
+     *
+     *
+     * 3.局部组件  在这个页面中使用
+     *
+     * 3.全局组件   任何都可以使用
+     *
+     *
+     */
+    let  vue  = new Vue({
+
+        el:"#app",
+        data:{
+
+        },
+
+        //声明自定义组件 components
+        components:{
+            'gjhc':{   //组件的名字
+
+              template:`<div>{{message}}<button  @click="btnclick">{{btnnum}}</button></div>`,//gjh-c组件对应的视图的组件
+                        //这样写是不是很麻烦？？？？？？？？？？？？？？？？？？？？？？
+                //components emplate 这个定义的数据，是在data()方法中，必须return
+                data(){
+                    return  {
+
+                        message:"顾家华和刘越",
+                        btnnum:0
+
+                    }
+
+                },
+
+                methods:{
+                    btnclick()
+                    {
+                        this.btnnum++;
+                    }
+
+
+                }
+
+
+
+            }
+
+
+        }
+
+    });
+
+</script>
+</html>

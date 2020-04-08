@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<img src="http://210.45.60.143/upload/tinstrument/1543996501skaie.jpg" />
+		
+	</body>
+	<!--引用 vue   axios组件-->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript">
+		//1.使用axios组件发起一个get请求
+		// axios.get("http://127.0.0.1:8200/date/message").then(function(res){
+		// 	console.log(res);
+		// 	console.log(res.data);
+		// }).catch(function(error){
+		// 	console.log(error)});
+		
+		
+		//2.带参数的axios组件发起get请求
+		// axios.get("http://127.0.0.1:8200/date/messageparam?name=顾家华").then(function(re){
+		// 	console.log(re.data);
+		// }).catch(function(error){
+		// 	console.log(error)})
+		
+		 //3.使用axios组件发起一个get请求带参数 另一种带参的写法  params不能变
+		// axios.get("http://127.0.0.1:8200/date/messageparam",{params:{name:"李涛"}}).then(function(re){
+		// 	console.log(re.data);
+		// }).catch(function(error){
+		// 	console.log(error)})
+		
+		// axios.get("http://127.0.0.1:8200/date/userdatas").then(function(res){
+		// 	console.log(res);
+		// 	console.log(res.data);
+		// }).catch(function(error){console.log(error);})
+			
+		/****/
+		//axios 的post请求不带参
+		// axios.post("http://127.0.0.1:8200/date/queryall").then(function(res){
+		// 	console.log(res);
+		// 	console.log(res.data);
+		// }).catch(function(error){console.log(error)})
+		
+		//axios的post请求带参数
+		// {uname:"李涛",uphone:"18226960810"} 这里的key是参照Javabean User中的属性
+		// axios.post("http://127.0.0.1:8200/date/queryallparams",
+		// {uname:"李涛",uphone:"18226960810"})
+		// .then(function(res){console.log(res);
+		// console.log(res.data);})
+		// .catch(function(error){console.log(error)});
+		
+		
+		 //axios的post请求   带参数  和这个微信小程序差不多
+		// var params=new URLSearchParams();
+		//   params.append("uname","智芯大厦");
+		//   params.append("upwd","123456");
+		// axios({
+		// 	url:"http://127.0.0.1:8200/date/queryalldatas",
+		// 	method:"post",
+		// 	data:params
+		// }).then(function(res){console.log(res);
+		// console.log(res.data);}).catch(function(error){console.log(error);})
+		
+		
+	</script>
+</html>

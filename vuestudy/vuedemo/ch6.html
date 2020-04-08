@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div  id="appone">
+		   <p>编程语言是:{{language}}</p>
+		   <p>这个编程语言的大写是:{{uppcase}}</p>
+		    <button  @click="addbook">添加一本java</button>
+		    <div>现在的书的数量是:{{bookinfo.count}}</div>
+		    <div>书的总价是:{{sumprice}}</div>
+		</div>
+	</body>
+	<script  src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+	<script type="text/javascript">
+	    let   vue    = new  Vue({
+	        el:"#appone",
+	        data:{
+	            language:"java",
+	            bookinfo:{
+	
+	                count:0,
+	                price:5
+	
+	            }
+	        },
+	        methods:{
+	            addbook()
+	            {
+	                this.bookinfo.count++;
+	            }
+	
+	        },
+	        computed:{
+	            //伪装成变量的方法
+	            uppcase(){
+	                return  this.language.toUpperCase();
+	
+	            },
+	            sumprice()
+	            {
+	                return this.bookinfo.price*this.bookinfo.count;
+	            }
+	
+	
+	        }
+	
+	
+	    });
+			
+		</script>
+</html>

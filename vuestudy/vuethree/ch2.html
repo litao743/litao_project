@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div  id="app">
+     <thzm-a></thzm-a>
+
+</div>
+
+<!-- 自定义模板标签  -->
+<template  id="myview">
+   <div>
+       <p>{{username}}</p>
+       <ul>
+           <li  v-for=" item  in  lists">
+               {{item}}
+
+           </li>
+
+       </ul>
+
+       <button @click="btnclick">{{count}}</button>
+
+   </div>
+
+</template>
+
+</body>
+<script  src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+<script  type="text/javascript">
+
+    let  vue   = new Vue({
+        el:"#app",
+        data:{
+        },
+        components:{
+            'thzm-a':{
+                template:"#myview",
+                data(){
+
+                    return{
+                        username:"天汇智码",
+                        lists:[1,2,3,4,5,6,7,9],
+                        count:0
+
+                    }
+                },
+                methods:{
+
+
+                    btnclick()
+                    {
+                        this.count++;
+                    }
+                }
+
+
+
+            }
+
+
+        }
+
+
+
+
+    })
+
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div  id="app">
+		       <input  type="text"  v-model="obj.age">
+		    {{msg}}
+		</div>
+	</body>
+	<script  src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+	<script type="text/javascript">
+	   let  vue=new  Vue({
+	       el:"#app",
+	       data:{
+	           msg:"",
+	           obj:{age:18}
+	
+	
+	       },
+	       watch:
+	       {
+	           obj:{
+	                handler(oldval,newold)
+	                {
+	                    console.log("年龄的值被改变了");
+	                    this.msg="年龄的值被改变了";
+	                },
+	                deep:true  //对象的深度监听
+	
+	               }
+	
+	
+	
+	       }
+	
+	   });
+	
+	
+	</script>
+</html>

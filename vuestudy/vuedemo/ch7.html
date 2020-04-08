@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div  id="app">
+		   <input  type="text" v-model="age">
+		
+		   <p>{{msg}}</p>
+	</body>
+	 <!-- //watch是vue中监听的属性，监听data中的属性,分为属性监听和对象监听
+	    //watch对data中一个属性值进行监听，监听数据有没有改变
+	    //typeof 关键字 -->
+	<script  src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+	<script type="text/javascript">
+		let app=new Vue({
+			el:"#app",
+			data:{msg:"",
+         age:"18"},
+		 //监听年龄的变化
+		 watch:{
+			 age(newval,oldval){
+				 console.log("新的年龄为："+newval+",旧的年龄为："+oldval);
+				 this.msg="新的年龄为:"+newval+",之前的年龄为:"+oldval;
+			 }
+		 }
+		})
+	</script>
+</html>

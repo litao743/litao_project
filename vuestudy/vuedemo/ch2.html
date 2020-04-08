@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div  id="app">
+		   <div v-for="item in datainfos">
+			  {{item.title}}
+		   </div>
+		</div>
+	</body>
+	<script  src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+	<script type="text/javascript">
+		//vue的双向绑定
+		var vue=new Vue({
+			el:"#app",
+			data:{   datainfos:[
+                {"title":"刘越","imgpath":"http://localhost:8500/images/s1.jpg" },
+                {"title":"顾家华","imgpath":"http://localhost:8500/images/s2.jpg"  },
+                { "title":"汤志文","imgpath":"http://localhost:8500/images/s3.jpg" }]}
+		})
+	</script>
+</html>

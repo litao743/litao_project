@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{num+40}}</p>
+			 <p>{{num|c1}}</p>
+			    <p>{{10,20|c2(30,40)}}</p>
+			    <p>{{10,20,30|c2(40,50)}}</p>
+			    <p>{{10|c2(40,50)}}</p>
+		</div>
+	</body>
+	<!--软件的核心：数据  所有的技术都是为商业价值而服务的  -->
+	
+	<!-- filter 过滤器   vue数据过滤器
+	
+	 j2ee是不是也学过过滤器组件
+	过滤器和拦截器区别
+	-->
+	<script  src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+	<script type="text/javascript">
+		var vue= new Vue({
+			el:"#app",
+			data:{
+				num:100
+			},
+			filters:{
+				//数据过滤器 渲染数据
+				c1:function(aa){
+					return "获取的值为："+aa*2;
+				},
+				 c2:function(a,b,c,d)
+				            {
+				                return  a+b+c+d;
+				            }
+			}
+		})
+	</script>
+</html>

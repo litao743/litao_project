@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style type="text/css">
+        .myview{
+
+            width: 500px;
+            height:500px;
+            background-color: aqua;
+
+
+        }
+        .gjh-enter-active, .gjh-leave-active{
+
+            transition :all  15s;
+
+        }
+        .gjh-enter{
+
+            opacity: 0.0;/**透明度**/
+        }
+        .gjh-enter-to{
+            opacity: 1.0;
+        }
+        .gjh-leave{
+
+            opacity: 1.0;
+        }
+        .gjh-leave-to{
+
+            opacity:0.2;
+        }
+
+    </style>
+</head>
+<body>
+<div  id="app">
+    <button @click="showview">可见|不可见</button>
+
+
+       <transition  name="gjh">
+              <div  v-show="flag"  class="myview"></div>
+       </transition>
+
+</div>
+
+</body>
+<script  src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+<script  type="text/javascript">
+   let  vue=new  Vue({
+       el:"#app",
+       data:{
+
+           flag:false
+       },
+       methods:{
+           showview()
+           {
+               this.flag=!this.flag;
+           }
+
+       }
+
+
+
+   });
+
+
+
+</script>
+</html>
